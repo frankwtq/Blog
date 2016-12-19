@@ -1,4 +1,11 @@
 Blog::Application.routes.draw do
+	root to: 'welcome#home'
+	match '/help',		to:	'welcome#help',		via: 'get'
+	match '/about',		to:	'welcome#about',	via: 'get'
+	match '/contact',	to: 'welcome#contact',via: 'get'
+#  get "welcome/home"
+#  get "welcome/help"
+#  get "welcome/contact"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
