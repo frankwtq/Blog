@@ -1,8 +1,10 @@
 Blog::Application.routes.draw do
-	root to: 'welcome#home'
-	match '/help',		to:	'welcome#help',		via: 'get'
-	match '/about',		to:	'welcome#about',	via: 'get'
-	match '/contact',	to: 'welcome#contact',via: 'get'
+	root to: 'welcomes#home'
+	resources :articles
+	match '/help',		to:	'welcomes#help',		via: 'get'
+	match '/about',		to:	'welcomes#about',	via: 'get'
+	match '/contact',	to: 'welcomes#contact',via: 'get'
+	match '/new',			to: 'articles#new',		via: 'get'
 #  get "welcome/home"
 #  get "welcome/help"
 #  get "welcome/contact"

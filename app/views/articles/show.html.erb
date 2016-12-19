@@ -1,0 +1,6 @@
+<h1><%= @article.title %></h1>
+<span class="timestamp">
+	Posted <%= time_ago_in_words(@article.created_at) %> ago.
+</span>
+<span class="text"><%= @article.text %></span>
+
