@@ -1,4 +1,5 @@
 class ArticlesController < ApplicationController
+	before_action :have_login, only: [:edit, :destroy, :new]
   def show
 	  @article = Article.find(params[:id])
 	end
@@ -31,5 +32,11 @@ class ArticlesController < ApplicationController
 	private
 		def article_params
 			params.require(:article).permit(:title, :text)
+		end
+
+		def have_login
+			if $admin != true
+				redirect_to login_path
+			end
 		end
 end

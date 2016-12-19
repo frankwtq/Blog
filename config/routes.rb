@@ -5,6 +5,10 @@ Blog::Application.routes.draw do
 	match '/about',		to:	'welcomes#about',	via: 'get'
 	match '/contact',	to: 'welcomes#contact',via: 'get'
 	match '/new',			to: 'articles#new',		via: 'get'
+  match '/login',		to: 'welcomes#login',		via: 'get'
+	match '/login',	to: 'welcomes#authentication',	via: 'post'
+	match '/logout',	to: 'welcomes#logout',	via: 'get'
+
 #  get "welcome/home"
 #  get "welcome/help"
 #  get "welcome/contact"
