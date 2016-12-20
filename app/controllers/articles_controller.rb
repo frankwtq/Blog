@@ -35,7 +35,7 @@ class ArticlesController < ApplicationController
 		end
 
 		def have_login
-			if $admin != true
+			if $remember_token.to_s != cookies[:remember_token]
 				redirect_to login_path
 			end
 		end

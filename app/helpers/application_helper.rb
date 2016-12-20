@@ -9,3 +9,13 @@ module ApplicationHelper
 		end
 	end
 end
+
+def have_login?
+	$remember_token.to_s == cookies[:remember_token]
+end
+
+def have_login
+	if $remember_token.to_s != cookies[:remember_token]
+		redirect_to login_path
+	end
+end

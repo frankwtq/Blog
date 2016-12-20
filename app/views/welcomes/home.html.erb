@@ -5,7 +5,7 @@
 	<% @articles.each do |article| %>
 		<li>
 			<%= link_to article.title, article %>
-			<% if $admin == true %>
+			<% if have_login? %>
 				<%= link_to "edit", edit_article_path(article) %>
 				<%= link_to "delete", article, method: :delete, data: {confirm: "You sure?"} %>
 			<% end %>
@@ -13,6 +13,6 @@
 	<% end %>
 </ul>
 
-<% if $admin == true %>
+<% if have_login? %>
 	<%= link_to "new article", new_path %>
 <% end %>
